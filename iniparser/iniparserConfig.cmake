@@ -5,8 +5,9 @@
 #  INIPARSER_INCLUDE_DIRS - include directories for INIPARSER
 #  INIPARSER_LIBRARIES    - libraries to link against
 
-
-set(INIPARSER_INCLUDE_DIRS "/home/ts/workSpace/packageConfig/iniparser/inc")
+set(INIPARSER_INCLUDE_DIRS "/usr/local/iniparser/include")
 set(INIPARSER_LIBRARIES "iniparser")
 
-include(${CMAKE_CURRENT_LIST_DIR}/iniparserTargets.cmake)
+if( NOT TARGET iniparser AND NOT iniparser_BINARY_DIR )
+	include(${CMAKE_CURRENT_LIST_DIR}/iniparserTargets.cmake)
+endif()
